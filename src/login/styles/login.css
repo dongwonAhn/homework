@@ -1,1 +1,180 @@
-/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root {
+  font-size: 16px;
+  --text-color: #121212;
+  --focus-color: #24388d;
+  --border-color: #dadada;
+  --focus-border: #03cf5d;
+  --focus-bg: #e9f0fd;
+  --button-bg: #03cf5d;
+  --white: #fff;
+  --error: #ff1414;
+}
+
+body {
+  margin: 0;
+  font-family: 'SUIT Variable', sans-serif;
+  color: var(--text-color);
+  background: var(--white);
+}
+
+.login-wrapper {
+  padding: 0 1.25rem;
+}
+
+.logo {
+  margin: 3rem auto 2rem;
+  text-align: center;
+}
+
+.login-form {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.input-group input {
+  font-size: 0.875rem;
+  height: 2.8125rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--white);
+  padding: 0 0.75rem;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.input-group input:focus {
+  border-color: var(--focus-border);
+  background-color: var(--focus-bg);
+  box-shadow: 0 0 0 2px var(--focus-border);
+}
+
+.input-group .error-msg {
+  font-size: 0.75rem;
+  color: var(--error);
+  margin-top: 0.25rem;
+  display: none;
+  padding-left: 1rem;
+}
+
+form:invalid input:invalid:user-invalid + .error-msg {
+  display: block;
+}
+
+.login-button {
+  margin-top: 1.25rem;
+  height: 2.8125rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--button-bg);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.login-button:focus {
+  outline: 2px solid var(--focus-color);
+}
+
+.status-row {
+  margin-top: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox-icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+.checkbox-icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.checkbox-icon .unchecked {
+  display: inline;
+}
+
+.checkbox input:checked ~ .checkbox-icon .checked {
+  display: inline;
+}
+
+.checkbox input:checked ~ .checkbox-icon .unchecked {
+  display: none;
+}
+
+.ip-toggle {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  color: var(--text-color);
+  font-family: 'SUIT Variable', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3125rem;
+  text-decoration: none;
+}
+
+.ip-toggle:focus {
+  outline: 2px solid var(--focus-color);
+}
+
+.ip-toggle .ip-status {
+  color: #999;
+}
+
+.ip-toggle.active .ip-status {
+  color: #03cf5d;
+}
+
+/* 반응형 */
+@media (min-width: 768px) {
+  .login-form {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .ip-toggle {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 767px) {
+  .status-row {
+    justify-content: flex-end;
+  }
+
+  .checkbox {
+    margin-left: auto;
+  }
+
+  .ip-toggle {
+    display: none;
+  }
+}
