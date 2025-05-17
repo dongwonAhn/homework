@@ -1,3 +1,81 @@
-@import "./card-component.css";
+@import './card-component.css';
 
-/* 카드 레이아웃 */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--extra-large-spacing);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--extra-large-spacing);
+  }
+
+  .card-ipad-pro,
+  .card-ipad-air,
+  .card-iphone15-pro {
+    grid-column: 1 / -1;
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: var(--large-spacing) var(--small-spacing);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  gap: var(--small-spacing);
+  min-height: var(--size);
+}
+
+.card-ipad-pro {
+  background-image: image-set(url('../products/ipad_pro.jpeg') 1x, url('../products/ipad_pro_2x.jpeg') 2x);
+  color: var(--white);
+}
+@media (min-width: 1024px) {
+  .card-ipad-pro {
+    background-image: image-set(url('../products/ipad_pro_wide.jpeg') 1x, url('../products/ipad_pro_wide_2x.jpeg') 2x);
+  }
+}
+
+.card-ipad-air {
+  background-image: image-set(url('../products/ipad_air.jpeg') 1x, url('../products/ipad_air_2x.jpeg') 2x);
+  color: var(--black);
+}
+@media (min-width: 1024px) {
+  .card-ipad-air {
+    background-image: image-set(url('../products/ipad_air_wide.jpeg') 1x, url('../products/ipad_air_wide_2x.jpeg') 2x);
+  }
+}
+
+.card-iphone15-pro {
+  background-image: image-set(url('../products/iphone15_pro.jpeg') 1x, url('../products/iphone15_pro_2x.jpeg') 2x);
+  color: var(--white);
+}
+@media (min-width: 1024px) {
+  .card-iphone15-pro {
+    background-image: image-set(url('../products/iphone15_pro_wide.jpeg') 1x, url('../products/iphone15_pro_wide_2x.jpeg') 2x);
+  }
+}
+
+.card-iphone15 {
+  background-image: image-set(url('../products/iphone15.jpeg') 1x, url('../products/iphone15_2x.jpeg') 2x);
+  color: var(--black);
+}
+
+.card-watch {
+  background-image: image-set(url('../products/apple_watch.jpeg') 1x, url('../products/apple_watch_2x.jpeg') 2x);
+  color: var(--white);
+}
+
+.card-macbook {
+  background-image: image-set(url('../products/macbook_air.jpeg') 1x, url('../products/macbook_air_2x.jpeg') 2x);
+  color: var(--black);
+}
+
+.card-airpods {
+  background-image: image-set(url('../products/airpods_pro.jpeg') 1x, url('../products/airpods_pro_2x.jpeg') 2x);
+  color: var(--white);
+}

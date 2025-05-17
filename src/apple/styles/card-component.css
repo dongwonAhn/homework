@@ -1,3 +1,75 @@
-@import "./reset.css";
-@import "./theme.css";
-@import "./base.css";
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+.btn {
+  border-radius: 9999px;
+  padding: var(--x-small-spacing) var(--small-spacing);
+  font-size: var(--xx-small-text);
+  font-weight: 500;
+  border: 1px solid transparent;
+  display: inline-block;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .btn {
+    font-size: var(--x-small-text);
+  }
+}
+
+.btn-black-filled {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.btn-black-outline {
+  background-color: transparent;
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+
+.btn-blue-filled {
+  background-color: var(--blue-300);
+  color: var(--white);
+}
+
+.btn-blue-outline {
+  background-color: transparent;
+  border: 1px solid var(--blue-300);
+  color: var(--blue-300);
+}
+
+.card-inner {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-content: space-between;
+  height: 100%;
+  padding-top: var(--x-small-spacing);
+  text-align: center;
+}
+
+.card-title {
+  font-size: var(--large-text);
+  font-weight: 700;
+  margin-bottom: var(--x-small-spacing);
+}
+
+.card-desc {
+  font-size: var(--medium-text);
+  line-height: var(--line-normal);
+  font-weight: 400;
+}
+
+.card-release {
+  font-size: var(--small-text);
+  color: var(--gray);
+  margin-top: var(--x-small-spacing);
+}
+
+.card-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--base-spacing);
+  flex-wrap: wrap;
+}
